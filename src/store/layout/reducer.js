@@ -13,7 +13,7 @@ import {
 
 const INIT_STATE = {
 	layoutType: "vertical",
-	layoutWidth: "fluid",
+	layoutWidth: "box",
 	leftSideBarTheme: "dark",
 	leftSideBarType: "default",
 	topbarTheme: "light",

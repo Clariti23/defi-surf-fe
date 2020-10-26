@@ -12,7 +12,7 @@ import { Row, Col, Dropdown, DropdownToggle, DropdownMenu } from "reactstrap";
 // Import menuDropdown
 import LanguageDropdown from "../CommonForBoth/TopbarDropdown/LanguageDropdown";
 import NotificationDropdown from "../CommonForBoth/TopbarDropdown/NotificationDropdown";
-import ProfileMenu from "../CommonForBoth/TopbarDropdown/ProfileMenu";
+
 
 import megamenuImg from "../../assets/images/megamenu-img.png";
 import logo from "../../assets/images/logo-sm-light.png";
@@ -341,7 +341,7 @@ const Header = (props) => {
 
               <NotificationDropdown />
 
-              <ProfileMenu />
+              
 
               <div className="dropdown d-inline-block">
                 <button
