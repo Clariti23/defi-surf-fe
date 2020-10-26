@@ -10,11 +10,8 @@ import {  showRightSidebarAction,toggleLeftmenu } from "../../store/actions";
 import { Row, Col, Dropdown, DropdownToggle, DropdownMenu } from "reactstrap";
 
 // Import menuDropdown
-import LanguageDropdown from "../CommonForBoth/TopbarDropdown/LanguageDropdown";
-import NotificationDropdown from "../CommonForBoth/TopbarDropdown/NotificationDropdown";
 
 
-import megamenuImg from "../../assets/images/megamenu-img.png";
 import logo from "../../assets/images/logo-sm-light.png";
 import logoLight from "../../assets/images/logo-light.png";
 import logoLightSvg from "../../assets/images/logo-light.svg";
@@ -227,15 +224,7 @@ const Header = (props) => {
                           </ul>
                         </Col>
 
-                        <Col sm={5}>
-                          <div>
-                            <img
-                              src={megamenuImg}
-                              alt=""
-                              className="img-fluid mx-auto d-block"
-                            />
-                          </div>
-                        </Col>
+                        
                       </Row>
                     </Col>
                   </Row>
@@ -276,7 +265,7 @@ const Header = (props) => {
                 </div>
               </div>
 
-              <LanguageDropdown />
+              
 
               <Dropdown className="d-none d-lg-inline-block ml-1" isOpen={socialDrp} toggle={() => { setsocialDrp(!socialDrp) }}>
                 <DropdownToggle className="btn header-item noti-icon waves-effect" caret tag="button">
@@ -339,7 +328,7 @@ const Header = (props) => {
                 </button>
               </div>
 
-              <NotificationDropdown />
+              
 
               
 
