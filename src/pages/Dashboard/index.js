@@ -44,10 +44,7 @@ import { withNamespaces } from 'react-i18next';
                         <Breadcrumbs title={props.t('Dashboard')} breadcrumbItem={props.t('Dashboard')} />
 
                         <Row>
-                            <Col xl="4">
-                                
-                                
-                            </Col>
+                            
                             <Col xl="8">
                                 <Row>
                                     {/* Reports Render */}

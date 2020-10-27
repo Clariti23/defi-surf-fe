@@ -12,7 +12,7 @@ import Authmiddleware from "./routes/middleware/Authmiddleware";
 
 // layouts Format
 import VerticalLayout from "./components/VerticalLayout/";
-import HorizontalLayout from "./components/HorizontalLayout/";
+
 
 
 // Import scss
@@ -23,15 +23,6 @@ const App = (props) => {
 
    function getLayout() {
 		let layoutCls = VerticalLayout;
-
-		switch (props.layout.layoutType) {
-			case "horizontal":
-				layoutCls = HorizontalLayout;
-				break;
-			default:
-				layoutCls = VerticalLayout;
-				break;
-		}
 		return layoutCls;
 	};
 
