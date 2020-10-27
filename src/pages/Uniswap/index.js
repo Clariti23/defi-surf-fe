@@ -68,7 +68,7 @@ import { withNamespaces } from 'react-i18next';
                     <Container fluid>
 
                         {/* Render Breadcrumb */}
-                        <Breadcrumbs title={props.t('Dashboard')} breadcrumbItem={props.t('Dashboard')} />
+                        <Breadcrumbs title={props.t('Dashboard')} breadcrumbItem={props.t('Uniswap')} />
 
                         <Row>
                             

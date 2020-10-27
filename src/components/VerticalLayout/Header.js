@@ -13,7 +13,7 @@ import { Dropdown, DropdownToggle, DropdownMenu } from "reactstrap";
 
 
 import logo from "../../assets/images/logo.svg";
-import logoLightPng from "../../assets/images/SwerveSurf.png";
+import logoLightPng from "../../assets/images/surflogo.jpg";
 import logoLightSvg from "../../assets/images/logo-light.svg";
 import logoDark from "../../assets/images/logo-dark.png";
 
