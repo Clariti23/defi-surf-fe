@@ -38,10 +38,22 @@ const SwerveFinance = (props) => {
         setVolume(marketData.total_volume.usd)
     }
     
+    const formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 2
+      })
+
+    const formatterEvilTwin = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 0
+      })
+
           const reports = [
-                { title: "Price", iconClass: "bx-copy-alt", description: price },
-                { title: "Market Cap", iconClass: "bx-archive-in", description: marketCap },
-                { title: "24h Volume", iconClass: "bx-purchase-tag-alt", description: volume }
+                { title: "Price", iconClass: "bx-copy-alt", description: formatter.format(price) },
+                { title: "Market Cap", iconClass: "bx-archive-in", description: formatterEvilTwin.format(marketCap) },
+                { title: "24h Volume", iconClass: "bx-purchase-tag-alt", description: formatterEvilTwin.format(volume) }
             ];
          const email = [
                 { title: "Week", linkto: "#", isActive: false },
