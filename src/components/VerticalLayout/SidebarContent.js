@@ -73,8 +73,9 @@ const SidebarContent = (props) => {
                                     <span>{props.t('Dashboards') }</span>
                         </Link>
                                 <ul className="sub-menu" aria-expanded="false">
-                                    <li><Link to="/swerve.finance">Swerve Finance</Link></li>
-                                    <li><Link to="/uniswap">Uniswap</Link></li>
+                                <li><Link to="/uniswap">Uniswap</Link></li>
+                                <li><Link to="/swerve.finance">Swerve Finance</Link></li>
+                                
                                 </ul>
                      </li>
                 </ul>
