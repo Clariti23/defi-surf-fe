@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Button, Card, CardBody, CardTitle, Modal, ModalHeader, ModalBody, ModalFooter, Media, Table } from "reactstrap";
 import { Link } from "react-router-dom";
 
@@ -20,12 +20,30 @@ import { withNamespaces } from 'react-i18next';
  const Uniswap = (props) => {
 
      const [modal, setmodal] = useState(false);
-
-          const reports = [
-                { title: "Orders", iconClass: "bx-copy-alt", description: "1,235" },
-                { title: "Revenue", iconClass: "bx-archive-in", description: "$35, 723" },
-                { title: "Average Price", iconClass: "bx-purchase-tag-alt", description: "$16.2" }
-            ];
+     const [price, setPrice] = useState(false);
+     const [marketCap, setMarketCap] = useState(false);
+     const [volume, setVolume] = useState(false);
+ 
+     const requestAPI = "https://api.coingecko.com/api/v3/coins/uniswap?localization=false"
+ 
+     useEffect( () => {
+         fetch(requestAPI)
+         .then(res => res.json())
+         .then(data => organizeData(data))
+     })
+ 
+     const organizeData = (data) => {
+         const marketData = data.market_data;
+         setPrice(marketData.current_price.usd);
+         setMarketCap(marketData.market_cap.usd)
+         setVolume(marketData.total_volume.usd)
+     }
+     
+           const reports = [
+                 { title: "Price", iconClass: "bx-copy-alt", description: price },
+                 { title: "Market Cap", iconClass: "bx-archive-in", description: marketCap },
+                 { title: "24h Volume", iconClass: "bx-purchase-tag-alt", description: volume }
+             ];
          const email = [
                 { title: "Week", linkto: "#", isActive: false },
                 { title: "Month", linkto: "#", isActive: false },
