@@ -13,7 +13,7 @@ const userRoutes = [
 	{ path: "/dashboard", component: Dashboard },
 	{ path: "/swerve.finance", component: SwerveFinance},
 	{ path: "/uniswap", component: Uniswap},
-	{ path: "/plasm", component: Plasm}
+	{ path: "/plasm", component: Plasm},
 
 	// this route should be at the end of all other routes
 	{ path: "/", exact: true, component: () => <Redirect to="/dashboard" /> }
