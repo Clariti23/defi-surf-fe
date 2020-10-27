@@ -69,11 +69,12 @@ const SidebarContent = (props) => {
                     <li className="menu-title">{props.t('Menu') }  </li>
                      <li>
                          <Link to="/#" className="waves-effect">
-                                    <i className="bx bx-home-circle"></i><span className="badge badge-pill badge-info float-right">03</span>
+                                    <i className="bx bx-home-circle"></i>
                                     <span>{props.t('Dashboards') }</span>
                         </Link>
                                 <ul className="sub-menu" aria-expanded="false">
-                                    <li><Link to="/dashboard">{props.t('Default') }</Link></li>
+                                    <li><Link to="/swerve.finance">Swerve Finance</Link></li>
+                                    <li><Link to="/uniswap">Uniswap</Link></li>
                                 </ul>
                      </li>
                 </ul>

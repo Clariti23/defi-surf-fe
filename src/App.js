@@ -4,7 +4,6 @@ import { Switch, BrowserRouter as Router } from "react-router-dom";
 import { connect } from "react-redux";
 
 // Import Routes all
-// import { userRoutes , authRoutes } from "./routes/allRoutes";
 import { userRoutes } from "./routes/allRoutes";
 
 // Import all middleware
@@ -12,8 +11,6 @@ import Authmiddleware from "./routes/middleware/Authmiddleware";
 
 // layouts Format
 import VerticalLayout from "./components/VerticalLayout/";
-
-
 
 // Import scss
 import "./assets/scss/theme.scss";
