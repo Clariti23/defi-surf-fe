@@ -13,7 +13,7 @@ import { Dropdown, DropdownToggle, DropdownMenu } from "reactstrap";
 
 
 import logo from "../../assets/images/logo.svg";
-import logoLightPng from "../../assets/images/logo-light.png";
+import logoLightPng from "../../assets/images/SwerveSurf.png";
 import logoLightSvg from "../../assets/images/logo-light.svg";
 import logoDark from "../../assets/images/logo-dark.png";
 
@@ -24,6 +24,8 @@ import dribbble from "../../assets/images/brands/dribbble.png";
 import dropbox from "../../assets/images/brands/dropbox.png";
 import mail_chimp from "../../assets/images/brands/mail_chimp.png";
 import slack from "../../assets/images/brands/slack.png";
+
+
 
 //i18n
 import { withNamespaces } from 'react-i18next';
@@ -97,7 +99,7 @@ function tToggle()
                     <img src={logoLightSvg} alt="" height="22" />
                   </span>
                   <span className="logo-lg">
-                    <img src={logoLightPng} alt="" height="19" />
+                    <img src={logoLightPng} alt="" height="80" />
                   </span>
                 </Link>
               </div>
