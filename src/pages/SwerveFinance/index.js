@@ -8,8 +8,8 @@ import StackedColumnChart from "../Dashboard/StackedColumnChart";
 import modalimage1 from "../../assets/images/product/img-7.png";
 import modalimage2 from "../../assets/images/product/img-4.png";
 
-// Pages Components
-
+// import data
+import swerveTVL from "../../json/swerve_tvl";
 
 //Import Breadcrumb
 import Breadcrumbs from '../../components/Common/Breadcrumb';
@@ -26,6 +26,7 @@ const SwerveFinance = (props) => {
     const requestAPI = "https://api.coingecko.com/api/v3/coins/swerve-dao?localization=false"
 
     useEffect( () => {
+        console.log(swerveTVL)
         fetch(requestAPI)
         .then(res => res.json())
         .then(data => organizeData(data))
@@ -55,6 +56,8 @@ const SwerveFinance = (props) => {
                 { title: "Market Cap", iconClass: "bx-archive-in", description: formatterEvilTwin.format(marketCap) },
                 { title: "24h Volume", iconClass: "bx-purchase-tag-alt", description: formatterEvilTwin.format(volume) }
             ];
+
+
          const email = [
                 { title: "Week", linkto: "#", isActive: false },
                 { title: "Month", linkto: "#", isActive: false },
