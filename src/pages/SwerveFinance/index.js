@@ -95,8 +95,13 @@ const SwerveFinance = (props) => {
                                         )
                                     }
                                 </Row>
-
-                                <TVL />    
+                                <Card>
+                                        <CardTitle >
+                                            TVL
+                                        </CardTitle>
+                                    <TVL />
+                                </Card>
+                                    
                                 
                                 <Card>
                                     <CardBody>
