@@ -1,21 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Button, Card, CardBody, CardTitle, Modal, ModalHeader, ModalBody, ModalFooter, Media, Table } from "reactstrap";
 import { Link } from "react-router-dom";
-
-//import Charts
 import StackedColumnChart from "../Dashboard/StackedColumnChart";
-
 import modalimage1 from "../../assets/images/product/img-7.png";
 import modalimage2 from "../../assets/images/product/img-4.png";
 
-// import data
-import swerveTVL from "../../json/swerve_tvl";
-
 //Import Breadcrumb
 import Breadcrumbs from '../../components/Common/Breadcrumb';
-
 //i18n
 import { withNamespaces } from 'react-i18next';
+
+//import Swerve TVL component
+import TVL from "./tvl"
+
 
 const SwerveFinance = (props) => {
     const [modal, setmodal] = useState(false);
@@ -26,7 +23,6 @@ const SwerveFinance = (props) => {
     const requestAPI = "https://api.coingecko.com/api/v3/coins/swerve-dao?localization=false"
 
     useEffect( () => {
-        console.log(swerveTVL)
         fetch(requestAPI)
         .then(res => res.json())
         .then(data => organizeData(data))
@@ -100,8 +96,11 @@ const SwerveFinance = (props) => {
                                     }
                                 </Row>
 
+                                <TVL />    
+                                
                                 <Card>
                                     <CardBody>
+
                                         <CardTitle className="mb-4 float-sm-left">
                                             Email Sent
                                         </CardTitle>
