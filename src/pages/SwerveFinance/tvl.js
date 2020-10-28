@@ -15,7 +15,11 @@ export default function tvl() {
    const GetData = () => {
     useEffect( () => {
         const mchart = am4core.create("chartdiv", am4charts.XYChart )
-        mchart.numberFormatter.numberFormat = "#a";
+
+        // Do not remove valueAxis even though the linter yells at you 
+        let valueAxis = mchart.yAxes.push(new am4charts.ValueAxis());    
+        
+        mchart.numberFormatter.numberFormat = "$#a";
         mchart.numberFormatter.bigNumberPrefixes = [
         { "number": 1e+3, "suffix": "K" },
         { "number": 1e+6, "suffix": "M" },
@@ -40,9 +44,10 @@ export default function tvl() {
         dateAxis.groupData = true;
         dateAxis.minZoomCount = 5;
 
-
-        var valueAxis = mchart.yAxes.push(new am4charts.ValueAxis());        
-
+            
+        // valueAxis.numberFormatter.numberFormat = "$";
+        
+        
         //USDT
         var series = mchart.series.push(new am4charts.LineSeries());
         series.dataFields.dateX = "date";

@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Button, Card, CardBody, CardTitle, Modal, ModalHeader, ModalBody, ModalFooter, Media, Table } from "reactstrap";
-import { Link } from "react-router-dom";
-import StackedColumnChart from "../Dashboard/StackedColumnChart";
-import modalimage1 from "../../assets/images/product/img-7.png";
-import modalimage2 from "../../assets/images/product/img-4.png";
+import { Container, Row, Col, Card, CardBody, CardTitle, Media } from "reactstrap";
 
 //Import Breadcrumb
 import Breadcrumbs from '../../components/Common/Breadcrumb';
@@ -15,7 +11,7 @@ import TVL from "./tvl"
 
 
 const SwerveFinance = (props) => {
-    const [modal, setmodal] = useState(false);
+
     const [price, setPrice] = useState(false);
     const [marketCap, setMarketCap] = useState(false);
     const [volume, setVolume] = useState(false);
@@ -48,9 +44,9 @@ const SwerveFinance = (props) => {
       })
 
           const reports = [
-                { title: "Price", iconClass: "bx-copy-alt", description: formatter.format(price) },
-                { title: "Market Cap", iconClass: "bx-archive-in", description: formatterEvilTwin.format(marketCap) },
-                { title: "24h Volume", iconClass: "bx-purchase-tag-alt", description: formatterEvilTwin.format(volume) }
+                { title: "Price", description: formatter.format(price) },
+                { title: "Market Cap", description: formatterEvilTwin.format(marketCap) },
+                { title: "24h Volume", description: formatterEvilTwin.format(volume) }
             ];
 
           return (
@@ -76,11 +72,6 @@ const SwerveFinance = (props) => {
                                                                 <p className="text-muted font-weight-medium">{report.title}</p>
                                                                 <h4 className="mb-0">{report.description}</h4>
                                                             </Media>
-                                                            <div className="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
-                                                                <span className="avatar-title">
-                                                                    <i className={"bx " + report.iconClass + " font-size-24"}></i>
-                                                                </span>
-                                                            </div>
                                                         </Media>
                                                     </CardBody>
                                                 </Card>

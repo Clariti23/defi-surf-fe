@@ -85,11 +85,6 @@ import { withNamespaces } from 'react-i18next';
                                                                 <p className="text-muted font-weight-medium">{report.title}</p>
                                                                 <h4 className="mb-0">{report.description}</h4>
                                                             </Media>
-                                                            <div className="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
-                                                                <span className="avatar-title">
-                                                                    <i className={"bx " + report.iconClass + " font-size-24"}></i>
-                                                                </span>
-                                                            </div>
                                                         </Media>
                                                     </CardBody>
                                                 </Card>

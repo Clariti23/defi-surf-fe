@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 
 import { connect } from "react-redux";
-import { Row, Col } from "reactstrap";
+
 
 import { Link } from "react-router-dom";
 
-// Reactstrap
-import { Dropdown, DropdownToggle, DropdownMenu } from "reactstrap";
+
 
 import logo from "../../assets/images/logo.svg";
 import logoLightPng from "../../assets/images/surflogo.jpg";
@@ -22,10 +21,7 @@ import {  showRightSidebarAction,toggleLeftmenu,changeSidebarType } from "../../
 
 const Header = (props) => {
 
-  const [search, setsearch] = useState(false);
-  // 
-  const [socialDrp, setsocialDrp] = useState(false);
-
+  const [search, setsearch] = useState(false); 
   const isMobile =  /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
 
