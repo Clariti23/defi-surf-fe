@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
-
 import { connect } from "react-redux";
-
-
 import { Link } from "react-router-dom";
-
+import LanguageDropdown from "../CommonForBoth/TopbarDropdown/LanguageDropdown";
 
 
 import logo from "../../assets/images/logo.svg";
@@ -119,6 +116,7 @@ function tToggle()
                   </form>
                 </div>
               </div>
+              <LanguageDropdown />
               <div className="dropdown d-none d-lg-inline-block ml-1">
                 <button type="button" onClick={() => { toggleFullscreen(); }} className="btn header-item noti-icon waves-effect" data-toggle="fullscreen">
                   <i className="bx bx-fullscreen"></i>
