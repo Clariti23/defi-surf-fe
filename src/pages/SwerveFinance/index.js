@@ -80,9 +80,7 @@ const SwerveFinance = (props) => {
                                     }
                                 </Row>
                                 <Card>
-                                <CardTitle className="mb-4 float-sm-left">
-                                           <h4 > Email Sent</h4>
-                                </CardTitle>
+                                
                                 <CardBody>
                                     <TVL />
                                 </CardBody>
