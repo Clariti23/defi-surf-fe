@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 
 import logo from "../../assets/images/logo.svg";
-import logoLightPng from "../../assets/images/surflogo.jpg";
+import logoLightPng from "../../assets/images/surflogo.png";
 import logoLightSvg from "../../assets/images/logo-light.svg";
 import logoDark from "../../assets/images/logo-dark.png";
 
