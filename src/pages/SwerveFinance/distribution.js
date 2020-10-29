@@ -14,8 +14,7 @@ export default function distribution() {
             chart.data = data;
 
             let lastNum = chart.data.length-1;
-            let last = chart.data[lastNum] 
-            console.log("last ",last)
+            let last = chart.data[lastNum];
             chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
 
             chart.legend = new am4charts.Legend();
@@ -52,8 +51,8 @@ export default function distribution() {
     
     return (
         <div>
-            
-            <div id="durationpie">{GeneratePieChart()} </div>
+            <div> <h4>Distribution</h4> </div>
+            <div id="durationpie" style={{ width: "100%", height: "350px" }}>{GeneratePieChart()} </div>
         </div>
     )
 }

@@ -57,7 +57,7 @@ const SwerveFinance = (props) => {
                 <div className="page-content">
                     <Container fluid>
                         <h4>Swerve Finance</h4>
-                        <Row>
+                        
                             <Col xl="12">
                                 <Card>                                
                                     <CardBody>
@@ -92,7 +92,7 @@ const SwerveFinance = (props) => {
                                     </CardBody>
                                 </Card>
                             </Col>
-                        </Row>
+                        
                     </Container>
                 </div>
             </React.Fragment>
