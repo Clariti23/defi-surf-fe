@@ -80,10 +80,11 @@ export default function vol() {
     };
     
     return (
-        
-        <div id="wchart">
-            <h3>Weekly Volumes</h3>
-            {GenerateChart()}
+        <div>
+            <div> <h5>Weekly Volume</h5></div>
+            <div id="wchart">
+                {GenerateChart()}
+            </div>
         </div>
     )
 }
