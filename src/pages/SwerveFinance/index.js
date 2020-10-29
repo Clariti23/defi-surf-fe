@@ -8,15 +8,13 @@ import { withNamespaces } from 'react-i18next';
 
 //import Swerve TVL component
 import TVL from "./tvl"
-import tvlSeries from "../../json/swerve_tvl.json"
 
 const SwerveFinance = (props) => {
 
-    //State variables and API resources
+    //State variables and API resource
     const [price, setPrice] = useState(false);
     const [marketCap, setMarketCap] = useState(false);
     const [volume, setVolume] = useState(false);
-    const [tvl, setTVL] = useState(false);
     const requestAPI = "https://api.coingecko.com/api/v3/coins/swerve-dao?localization=false"
 
     
@@ -31,9 +29,6 @@ const SwerveFinance = (props) => {
         setPrice(marketData.current_price.usd);
         setMarketCap(marketData.market_cap.usd)
         setVolume(marketData.total_volume.usd)
-        const last = tvlSeries.length-1;
-        const num = tvlSeries[last].dai + tvlSeries[last].usdt + tvlSeries[last].usdc +tvlSeries[last].tusd ;
-        setTVL(num);
     }
     
     const formatter = new Intl.NumberFormat('en-US', {
@@ -49,7 +44,6 @@ const SwerveFinance = (props) => {
       })
 
     const reports = [
-                { title: "TVL", description: formatterEvilTwin.format(tvl)},
                 { title: "Price", description: formatter.format(price) },
                 { title: "Market Cap", description: formatterEvilTwin.format(marketCap) },
                 { title: "24h Volume", description: formatterEvilTwin.format(volume) }
@@ -59,13 +53,17 @@ const SwerveFinance = (props) => {
               <React.Fragment>
                 <div className="page-content">
                     <Container fluid>
-
-                        {/* Render Breadcrumb */}
-                        <Breadcrumbs title={props.t('Dashboard')} breadcrumbItem={props.t('Swerve Finance')} />
-
+                        <h4>Swerve Finance</h4>
+                        
                         <Row>
                             
-                            <Col xl="8">
+                            <Col xl="12">
+                               
+                                <Card>                                
+                                    <CardBody>
+                                        <TVL />
+                                    </CardBody>
+                                </Card>
                                 <Row>
                                     {/* Reports Render */}
                                     {
@@ -85,13 +83,6 @@ const SwerveFinance = (props) => {
                                         )
                                     }
                                 </Row>
-                                <Card>
-                                
-                                <CardBody>
-                                    <TVL />
-                                </CardBody>
-                                    
-                                </Card>
                             </Col>
                         </Row>
                     </Container>

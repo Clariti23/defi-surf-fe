@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
@@ -12,10 +12,29 @@ am4core.useTheme(am4themes_animated);
 
 
 export default function tvl() {
-   const GetData = () => {
+    
+    const formatterEvilTwin = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 2
+      })
+
+    const generateTVLnum = () => {
+        const last = swerveTVL.length-1;
+        const num = swerveTVL[last].dai + swerveTVL[last].usdt + swerveTVL[last].usdc + swerveTVL[last].tusd;
+        return formatterEvilTwin.format(num);
+    } 
+
+    const GetData = () => {
     useEffect( () => {
+        
         const mchart = am4core.create("chartdiv", am4charts.XYChart )
         
+        
+
+
+
+
         // Do not remove valueAxis even though the linter yells at you 
         let valueAxis = mchart.yAxes.push(new am4charts.ValueAxis());    
         mchart.numberFormatter.numberFormat = "$#a";
@@ -148,7 +167,7 @@ export default function tvl() {
     GetData()
     return (
         <div>
-            <div> <h4>Total Value Locked (TVL)</h4></div>
+            <div> <h4>Total Value Locked (TVL): {generateTVLnum()}</h4></div>
             <div id="chartdiv" style={{ width: "100%", height: "500px" }}></div>
         </div>
     )
