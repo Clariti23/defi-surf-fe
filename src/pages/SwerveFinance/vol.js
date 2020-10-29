@@ -7,9 +7,7 @@ export default function vol() {
     
     const GenerateChart = () => {
         useEffect(() => {
-            console.log(volumes)
             
-
             var wchart = am4core.create("wchart", am4charts.XYChart);
             wchart.dateFormatter.inputDateFormat = "YYYY-MM-DDTHH:mm:sssZ";
             wchart.numberFormatter.numberFormat = "#a";
@@ -72,7 +70,12 @@ export default function vol() {
             columnTemplate.propertyFields.fill = "color";
             columnTemplate.height = am4core.percent(100);
 
-            
+            // Dispose chart
+            return () => {
+                if (wchart) {
+                    wchart.dispose();
+                }
+             }
         })
     };
     
