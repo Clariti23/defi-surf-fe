@@ -10,7 +10,7 @@ import { withNamespaces } from 'react-i18next';
 //import Swerve specific data components
 import TVL from "./tvl";
 import VOL from "./vol";
-
+import Distribution from "./distribution";
 
 const SwerveFinance = (props) => {
 
@@ -81,9 +81,14 @@ const SwerveFinance = (props) => {
                                         )
                                     }
                                 </Row>
+                                    <Card>
+                                        <CardBody>
+                                            <VOL />
+                                        </CardBody>
+                                    </Card>
                                 <Card>
                                     <CardBody>
-                                        <VOL />
+                                        <Distribution />
                                     </CardBody>
                                 </Card>
                             </Col>
