@@ -8,16 +8,18 @@ import { withNamespaces } from 'react-i18next';
 
 //import Swerve TVL component
 import TVL from "./tvl"
-
+import tvlSeries from "../../json/swerve_tvl.json"
 
 const SwerveFinance = (props) => {
 
+    //State variables and API resources
     const [price, setPrice] = useState(false);
     const [marketCap, setMarketCap] = useState(false);
     const [volume, setVolume] = useState(false);
-
+    const [tvl, setTVL] = useState(false);
     const requestAPI = "https://api.coingecko.com/api/v3/coins/swerve-dao?localization=false"
 
+    
     useEffect( () => {
         fetch(requestAPI)
         .then(res => res.json())
@@ -29,6 +31,9 @@ const SwerveFinance = (props) => {
         setPrice(marketData.current_price.usd);
         setMarketCap(marketData.market_cap.usd)
         setVolume(marketData.total_volume.usd)
+        const last = tvlSeries.length-1;
+        const num = tvlSeries[last].dai + tvlSeries[last].usdt + tvlSeries[last].usdc +tvlSeries[last].tusd ;
+        setTVL(num);
     }
     
     const formatter = new Intl.NumberFormat('en-US', {
@@ -43,11 +48,12 @@ const SwerveFinance = (props) => {
         minimumFractionDigits: 0
       })
 
-          const reports = [
+    const reports = [
+                { title: "TVL", description: formatterEvilTwin.format(tvl)},
                 { title: "Price", description: formatter.format(price) },
                 { title: "Market Cap", description: formatterEvilTwin.format(marketCap) },
                 { title: "24h Volume", description: formatterEvilTwin.format(volume) }
-            ];
+    ];
 
           return (
               <React.Fragment>
