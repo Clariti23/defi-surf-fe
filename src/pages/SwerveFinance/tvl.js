@@ -15,10 +15,9 @@ export default function tvl() {
    const GetData = () => {
     useEffect( () => {
         const mchart = am4core.create("chartdiv", am4charts.XYChart )
-
+        
         // Do not remove valueAxis even though the linter yells at you 
         let valueAxis = mchart.yAxes.push(new am4charts.ValueAxis());    
-        
         mchart.numberFormatter.numberFormat = "$#a";
         mchart.numberFormatter.bigNumberPrefixes = [
         { "number": 1e+3, "suffix": "K" },
@@ -53,7 +52,7 @@ export default function tvl() {
         series.dataFields.dateX = "date";
         series.name = "USDT";
         series.dataFields.valueY = "usdt";
-        series.tooltipHTML = "<span style='font-size:15px; color:#000000;'><b>USDT</b> {valueY.value.formatNumber('###,###,###,###.')} </span><img src='img/usdt.png' style='vertical-align:center; width:15px;'>";
+        series.tooltipHTML = "<span style='font-size:15px; color:#000000;'><b>USDT</b> {valueY.value.formatNumber('###,###,###,###.')} </span>";
         series.tooltipText = "[#000]{valueY.value}[/]";
         series.tooltip.background.fill = am4core.color("#FFF");
         series.tooltip.color = am4core.color("#000");
@@ -71,7 +70,7 @@ export default function tvl() {
         series2.name = "USDC";
         series2.dataFields.dateX = "date";
         series2.dataFields.valueY = "usdc";
-        series2.tooltipHTML = "<span style='font-size:15px; color:#000000;'><b>USDC</b> {valueY.value.formatNumber('###,###,###,###.')} </span><img src='img/usdc.png' style='vertical-align:center; width:15px;'>";
+        series2.tooltipHTML = "<span style='font-size:15px; color:#000000;'><b>USDC</b> {valueY.value.formatNumber('###,###,###,###.')} </span>";
         series2.tooltipText = "[#000]{valueY.value}[/]";
         series2.tooltip.background.fill = am4core.color("#FFF");
         series2.tooltip.color = am4core.color("#000");
@@ -90,7 +89,7 @@ export default function tvl() {
         series3.name = "TUSD";
         series3.dataFields.dateX = "date";
         series3.dataFields.valueY = "tusd";
-        series3.tooltipHTML = "<span style='font-size:15px; color:#000000;'><b>TUSD</b> {valueY.value.formatNumber('###,###,###,###.')} </span><img src='img/tusd.png' style='vertical-align:center; width:15px;'>";
+        series3.tooltipHTML = "<span style='font-size:15px; color:#000000;'><b>TUSD</b> {valueY.value.formatNumber('###,###,###,###.')} </span>";
         series3.tooltipText = "[#000]{valueY.value}[/]";
         series3.tooltip.background.fill = am4core.color("#FFF");
         series3.tooltip.color = am4core.color("#000");
@@ -110,7 +109,7 @@ export default function tvl() {
         series4.name = "DAI";
         series4.dataFields.dateX = "date";
         series4.dataFields.valueY = "dai";
-        series4.tooltipHTML = "<span style='font-size:15px; color:#000000;'><b>DAI</b> {valueY.value.formatNumber('###,###,###,###.')} </span><img src='img/dai.png' style='vertical-align:center; width:15px;'>";
+        series4.tooltipHTML = "<span style='font-size:15px; color:#000000;'><b>DAI</b> {valueY.value.formatNumber('###,###,###,###.')} </span>";
         series4.tooltipText = "[#000]{valueY.value}[/]";
         series4.tooltip.background.fill = am4core.color("#FFF");
         series4.tooltip.color = am4core.color("#000");
