@@ -29,11 +29,6 @@ export default function tvl() {
     useEffect( () => {
         
         const mchart = am4core.create("chartdiv", am4charts.XYChart )
-        
-        
-
-
-
 
         // Do not remove valueAxis even though the linter yells at you 
         let valueAxis = mchart.yAxes.push(new am4charts.ValueAxis());    
@@ -160,7 +155,14 @@ export default function tvl() {
         let sbSeries = scrollbarX.scrollbarChart.series.getIndex(0);
         sbSeries.dataFields.valueYShow = undefined;
         mchart.scrollbarX = scrollbarX;
+        
 
+        //Dispose table 
+        return () => {
+           if (mchart) {
+               mchart.dispose();
+           }
+        }
     })
     }
 

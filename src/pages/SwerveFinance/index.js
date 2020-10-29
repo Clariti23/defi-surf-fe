@@ -6,8 +6,10 @@ import Breadcrumbs from '../../components/Common/Breadcrumb';
 //i18n
 import { withNamespaces } from 'react-i18next';
 
-//import Swerve TVL component
-import TVL from "./tvl"
+//import Swerve specific data components
+import TVL from "./tvl";
+import VOL from "./vol";
+
 
 const SwerveFinance = (props) => {
 
@@ -54,20 +56,15 @@ const SwerveFinance = (props) => {
                 <div className="page-content">
                     <Container fluid>
                         <h4>Swerve Finance</h4>
-                        
                         <Row>
-                            
                             <Col xl="12">
-                               
                                 <Card>                                
                                     <CardBody>
                                         <TVL />
                                     </CardBody>
                                 </Card>
                                 <Row>
-                                    {/* Reports Render */}
-                                    {
-                                        reports.map((report, key) =>
+                                    {reports.map((report, key) =>
                                             <Col md="4" key={"_col_" + key}>
                                                 <Card className="mini-stats-wid">
                                                     <CardBody>
@@ -83,6 +80,11 @@ const SwerveFinance = (props) => {
                                         )
                                     }
                                 </Row>
+                                <Card>
+                                    <CardBody>
+                                        <VOL />
+                                    </CardBody>
+                                </Card>
                             </Col>
                         </Row>
                     </Container>
