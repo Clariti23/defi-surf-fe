@@ -1,4 +1,4 @@
-import React, { useEffect} from 'react';
+import React from 'react';
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import topHolders from "../../json/swerve_top_holders";
