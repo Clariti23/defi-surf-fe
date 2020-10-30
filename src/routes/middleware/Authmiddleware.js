@@ -9,11 +9,7 @@ const Authmiddleware = ({
 			render={props => {
 			
 			// here you can apply condition
-			if (!localStorage.getItem("authUser")) {
-					return (
-						<Redirect to={{ pathname: "/dashboard", state: { from: props.location } }} />
-					);
-				}
+			
 				
 				return (
 		     	<Layout>
