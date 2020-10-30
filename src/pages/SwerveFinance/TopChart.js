@@ -59,11 +59,20 @@ export default function TopChart() {
             // Enable export
             topchart.exporting.menu = new am4core.ExportMenu();
             topchart.exporting.menu.align = "left";
-        }        
+
+            // dispose chart
+            return () => {
+                if (topchart) {
+                    topchart.dispose();
+                }
+             }
+        }
+
+    GenerateTop();        
     return (
         <div>
             <div> <h5>Top Holders</h5></div>
-            <div id="top20" style={{ width: "100%", height: "350px" }}>{GenerateTop()} </div>
+            <div id="top20" style={{ width: "100%", height: "350px" }}></div>
         </div>
     )
 }

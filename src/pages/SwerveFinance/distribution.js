@@ -46,13 +46,20 @@ export default function distribution() {
             series.labels.template.text = "{category}";
             series.slices.template.tooltipHTML = "{category}<br><span style='font-size:14px'><b>$ {value.value.formatNumber('###,###,###,###.')}</b> ({value.percent.formatNumber('##.00')}%)</span>";
 
+            return () => {
+                if (chart) {
+                    chart.dispose();
+                }
+             }
     }
     
-    
+    GeneratePieChart()
     return (
+
         <div>
             <div> <h4>Assets</h4> </div>
-            <div id="durationpie" style={{ width: "100%", height: "350px" }}>{GeneratePieChart()} </div>
+            <div id="durationpie" style={{ width: "100%", height: "350px" }}>
+            </div>
         </div>
     )
 }
