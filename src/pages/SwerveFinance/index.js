@@ -11,6 +11,7 @@ import { withNamespaces } from 'react-i18next';
 import TVL from "./tvl";
 import VOL from "./vol";
 import Distribution from "./distribution";
+import TopChart from "./TopChart"
 
 const SwerveFinance = (props) => {
 
@@ -89,6 +90,11 @@ const SwerveFinance = (props) => {
                                 <Card>
                                     <CardBody>
                                         <Distribution />
+                                    </CardBody>
+                                </Card>
+                                <Card>
+                                    <CardBody>
+                                        <TopChart />
                                     </CardBody>
                                 </Card>
                             </Col>

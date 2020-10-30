@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
-import am4themes_animated from "@amcharts/amcharts4/themes/animated";
+
 
 // import data
 import data from "../../json/swerve_tvl";
@@ -51,7 +51,7 @@ export default function distribution() {
     
     return (
         <div>
-            <div> <h4>Distribution</h4> </div>
+            <div> <h4>Assets</h4> </div>
             <div id="durationpie" style={{ width: "100%", height: "350px" }}>{GeneratePieChart()} </div>
         </div>
     )

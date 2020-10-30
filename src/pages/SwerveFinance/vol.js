@@ -81,7 +81,7 @@ export default function vol() {
     
     return (
         <div>
-            <div> <h5>Weekly Volume</h5></div>
+            <div> <h5>Last 7 Days of Volume</h5></div>
             <div id="wchart">
                 {GenerateChart()}
             </div>
