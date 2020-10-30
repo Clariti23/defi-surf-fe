@@ -2,7 +2,7 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 
 // Dashboard
-import Dashboard from "../pages/Dashboard/index";
+// import Dashboard from "../pages/Dashboard/index";
 
 //Sub-Dashboards
 import SwerveFinance from "../pages/SwerveFinance/index";
@@ -11,7 +11,7 @@ import Plasm from "../pages/Plasm/index";
 
 
 const userRoutes = [
-	{ path: "/dashboard", component: Dashboard },
+	{ path: "/dashboard", component: SwerveFinance },
 	{ path: "/swerve.finance", component: SwerveFinance},
 	{ path: "/uniswap", component: Uniswap},
 	{ path: "/plasm", component: Plasm},
